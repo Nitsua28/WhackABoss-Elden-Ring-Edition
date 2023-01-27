@@ -1,2 +1,2 @@
 # whackABoss
-EldenRing Api shinanigans
+Elden Ring Api shinanigans
