@@ -1,0 +1,100 @@
+.container {  display: grid;
+    grid-template-columns: 0.8fr 1.8fr 0.3fr 1.5fr 0.7fr;
+    grid-template-rows: 0.7fr 0.4fr 1fr 2.2fr 1fr;
+    gap: 4px 3px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "input-container input-container input-container input-container input-container"
+      "input-button-container input-button-container input-button-container input-button-container input-button-container"
+      "game-container game-container game-container game-container game-container"
+      "game-container game-container game-container game-container game-container"
+      "game-container game-container game-container game-container game-container";
+  }
+  
+  .input-button-container { grid-area: input-button-container; }
+  
+  .input-container {  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "weapon-input-container boss-input-container";
+    grid-area: input-container;
+  }
+  
+  .weapon-input-container { grid-area: weapon-input-container; }
+  
+  .boss-input-container { grid-area: boss-input-container; }
+  
+  .game-container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "person-container button-damage-container boss-info-container"
+      "person-container button-damage-container boss-info-container";
+    grid-area: game-container;
+  }
+  
+  .person-container {  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "personpic-container weapon-container";
+    grid-area: person-container;
+  }
+  
+  .personpic-container { grid-area: personpic-container; }
+  
+  .weapon-container {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 1.8fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "weaponname-container"
+      "weapon-pic-container";
+    grid-area: weapon-container;
+  }
+  
+  .weaponname-container { grid-area: weaponname-container; }
+  
+  .weapon-pic-container { grid-area: weapon-pic-container; }
+  
+  .button-damage-container {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "damage-splat-container"
+      "game-button-container";
+    grid-area: button-damage-container;
+  }
+  
+  .damage-splat-container { grid-area: damage-splat-container; }
+  
+  .game-button-container { grid-area: game-button-container; }
+  
+  .boss-info-container {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr 0.3fr 2.4fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "hpbar-container"
+      "bossname-container"
+      "bossimage-container";
+    grid-area: boss-info-container;
+  }
+  
+  .hpbar-container { grid-area: hpbar-container; }
+  
+  .bossname-container { grid-area: bossname-container; }
+  
+  .bossimage-container { grid-area: bossimage-container; }
+  

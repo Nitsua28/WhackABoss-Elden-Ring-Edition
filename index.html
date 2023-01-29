@@ -5,79 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whack A Boss</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id = "body-container">
-        <div id = "input-container">
-            <div id = "weapon-input-container">
-                <input id = "input" onInput = "setWeaponName(event)">
+    <div class="container">
+        <div class="input-button-container">
+            <button onclick= "generateInfo()">input</button>
+        </div>
+        <div class="input-container">
+          <div class="weapon-input-container">
+            weapon
+            <input onInput = "setWeaponName(event)">
+          </div>
+          <div class="boss-input-container">
+            boss
+            <input onInput = "setBossName(event)">
+          </div>
+        </div>
+        <div class="game-container">
+          <div class="person-container">
+            <div class="personpic-container">
+                <img id="personpic">
             </div>
-            <div id = "boss-input-container">
-                <input id = "input" onInput = "setBossName(event)">
-                <button onclick= "generateBossInfo()">find Boss</button>
+            <div class="weapon-container">
+                <div class="weaponname-container"></div>
+                <div class="weapon-pic-container">
+                    <img id="weaponpic">
+                </div>
+              </div>
+          </div>
+          <div class="button-damage-container">
+            <div class="damage-splat-container"></div>
+            <div class="game-button-container"></div>
+          </div>
+          <div class="boss-info-container">
+            <div class="hpbar-container"></div>
+            <div class="bossname-container"></div>
+            <div class="bossimage-container">
+                <img id="bossimage">
             </div>
+          </div>
         </div>
-        <div id = "bossInfo">
+      </div>
 
-        </div>
-        <img id = "bossPic">
+      <script src="script.js"></script>
 
-        <div id = "wepInfo">
-
-        </div>
-        <img id = "wepPic">
-
-    </div>
-    <script>
-        let weaponInfo = {};
-        let bossInfo = {};
-
-        let bossName = "";
-        let wepName = "";
-
-        function setBossName(event = new Event()){
-            bossName = event.target.value;
-        }
-
-        function setWeaponName(event = new Event()){
-            wepName = event.target.value;
-        }
-        async function generateBossInfo(){
-            const httpResponseBoss = await fetch("https://eldenring.fanapis.com/api/bosses?name=" + bossName);
-            bossInfo = await httpResponseBoss.json();
-
-            const httpResponseWeapon = await fetch("https://eldenring.fanapis.com/api/weapons?name=" + wepName);
-            weaponInfo = await httpResponseWeapon.json();
-            console.log(bossInfo)
-            console.log(weaponInfo)
-            renderBossInfo();
-        }
-
-        function renderBossInfo(){
-            const bossname = bossInfo.data[0].name
-            const bosspicture = bossInfo.data[0].image
-            const healthPoints = bossInfo.data[0].healthPoints
-
-            const weaponname = weaponInfo.data[0].name
-            const weaponpicture = weaponInfo.data[0].image
-            const damage = weaponInfo.data[0].attack[0].amount;
-
-            const bossInfoDiv = document.getElementById("bossInfo");
-            const bossImageDiv = document.getElementById("bossPic");
-            
-            const wepInfoDiv = document.getElementById("wepInfo");
-            const wepImageDiv = document.getElementById("wepPic");
-
-            bossInfoDiv.append(bossname);
-            bossImageDiv.setAttribute("src", bosspicture);
-            bossInfoDiv.append(healthPoints);
-
-            wepInfoDiv.append(weaponname);
-            wepImageDiv.setAttribute("src", weaponpicture);
-            wepInfoDiv.append(damage);
-
-
-        }
-    </script>
 </body>
 </html>
