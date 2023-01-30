@@ -1,143 +1,213 @@
-.container {  display: grid;
-    grid-template-columns: 0.8fr 1.8fr 0.3fr 1.5fr 0.7fr;
-    grid-template-rows: 0.7fr 0.4fr 1fr 2.2fr 1fr;
-    gap: 4px 3px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "input-container input-container input-container input-container input-container"
-      "input-button-container input-button-container input-button-container input-button-container input-button-container"
-      "game-container game-container game-container game-container game-container"
-      "game-container game-container game-container game-container game-container"
-      "game-container game-container game-container game-container game-container";
-  }
-  
-  .input-button-container { grid-area: input-button-container; }
-  
-  .input-container {  display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "weapon-input-container boss-input-container";
-    grid-area: input-container;
-  }
-  
-  .weapon-input-container { grid-area: weapon-input-container; }
-  
-  .boss-input-container { grid-area: boss-input-container; }
-  
-  .game-container {  display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "person-container button-damage-container boss-info-container"
-      "person-container button-damage-container boss-info-container";
-    grid-area: game-container;
-  }
-  
-  .person-container {  display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "personpic-container weapon-container";
-    grid-area: person-container;
-  }
-  
-  .personpic-container { grid-area: personpic-container; }
-  #personpic {
-    width: 300px;
-    height: 500px;
-  }
-  .weapon-container {  display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 1.8fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "weaponname-container"
-      "weapon-pic-container";
-    grid-area: weapon-container;
-  }
-  
-  .weaponname-container { grid-area: weaponname-container; }
-  
-  .weapon-pic-container { grid-area: weapon-pic-container; }
-  
-  .button-damage-container {  display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "damage-splat-container"
-      "game-button-container";
-    grid-area: button-damage-container;
-  }
-  
-  .damage-splat-container { grid-area: damage-splat-container; }
-  
-  .game-button-container { grid-area: game-button-container; }
-  
-  .boss-info-container {  display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.3fr 0.3fr 2.4fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "hpbar-container"
-      "bossname-container"
-      "bossimage-container";
-    grid-area: boss-info-container;
-  }
-  
-  .hpbar-container { grid-area: hpbar-container; }
-  .progress {
-    margin: 10px;
-    width: 500px;
-    position: relative;
-  }
-  #current-progress{
-    display: inline-block;
-    z-index: 100;
-    position: absolute;
-  }
-  #dynamic{
-    background-color: red;
-  }
-  .bossname-container { grid-area: bossname-container; }
-  
-  .bossimage-container { grid-area: bossimage-container; }
-
-  #damage-splat{ /*reference http://jsfiddle.net/Lcrqgjox/4/*/
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    background-color: #FF0000;
-    margin-top: 20px;
-    
-    animation:signup-response 0.3s 1;
-    -webkit-animation:signup-response 0.3s 1;
-    animation-fill-mode: forwards;
-    
-    animation-delay:0.3s;
-    -webkit-animation-delay:0.3s; /* Safari and Chrome */
-    -webkit-animation-fill-mode: forwards;
-    
-} 
-
-@keyframes signup-response{
-    from {opacity :1;}
-    to {opacity :0;}
+.body-container{
+  width: 100%;
+  height: 1500px;
+  background-color: black;
 }
-
-@-webkit-keyframes signup-response{
-    from {opacity :1;}
-    to {opacity :0;}
+#title{
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+.container {  
+  display: grid;
+  background-color: white;
+  grid-template-columns: 0.8fr 1.8fr 0.3fr 1.5fr 0.7fr;
+  grid-template-rows: 0.7fr 0.4fr 1fr 2.2fr 1fr;
+  gap: 4px 3px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "input-container input-container input-container input-container input-container"
+    "input-button-container input-button-container input-button-container input-button-container input-button-container"
+    "game-container game-container game-container game-container game-container"
+    "game-container game-container game-container game-container game-container"
+    "game-container game-container game-container game-container game-container";
 }
   
+.input-button-container { 
+  grid-area: input-button-container; 
+  border: 5px solid black;
+}
+  
+.input-container {  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "weapon-input-container boss-input-container";
+  grid-area: input-container;
+}
+  
+.weapon-input-container { 
+grid-area: weapon-input-container; 
+justify-content: center;
+align-items: center;
+text-align: center;
+border: 5px solid black;
+}
+
+.boss-input-container { 
+grid-area: boss-input-container;
+justify-content: center;
+align-items: center;
+text-align: center;
+border: 5px solid black;
+}
+  
+#input-button{
+width: 100%;
+height: 100%;
+background-color: grey;
+}
+.game-container {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "person-container button-damage-container boss-info-container"
+    "person-container button-damage-container boss-info-container";
+  grid-area: game-container;
+}
+  
+.person-container {  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "personpic-container weapon-container";
+  grid-area: person-container;
+  
+}
+
+.personpic-container { 
+  grid-area: personpic-container;
+  width: 300px;
+  height: 500px;
+  border: 5px solid black;
+}
+#personpic {
+  width: 100%;
+  height: 100%;
+}
+.weapon-container {  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr 1.8fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "weaponname-container"
+    "weapon-pic-container";
+  grid-area: weapon-container;
+}
+
+.weaponname-container { 
+  grid-area: weaponname-container;
+  text-align: center;
+  border: 5px solid black;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.weapon-pic-container { 
+  grid-area: weapon-pic-container; 
+  width: 300px;
+  height: 500px;
+  border: 5px solid black;
+}
+#weaponpic{
+  width: 100%;
+  height: 100%;
+}
+.button-damage-container {  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "damage-splat-container"
+    "game-button-container";
+  grid-area: button-damage-container;
+}
+
+.damage-splat-container { 
+  grid-area: damage-splat-container;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 5px solid black;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.game-button-container { 
+  grid-area: game-button-container;
+  height: 250px;
+  border: 5px solid black;
+}
+
+  .whackButton{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  background-color: grey;
+  width: 100%;
+  height: 100%
+}
+.boss-info-container {  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.3fr 0.3fr 2.4fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "hpbar-container"
+    "bossname-container"
+    "bossimage-container";
+  grid-area: boss-info-container;
+}
+
+.hpbar-container { 
+  grid-area: hpbar-container; 
+}
+.progress {
+  margin: 10px;
+  width: 500px;
+  position: relative;
+}
+#current-progress{
+  display: inline-block;
+  z-index: 100;
+  position: absolute;
+}
+#dynamic{
+  background-color: red;
+}
+.bossname-container { 
+  grid-area: bossname-container;
+  border: 5px solid black;
+  font-family: sans-serif;
+  font-weight: bold;
+  }
+
+.bossimage-container { 
+  grid-area: bossimage-container;
+  width: 500px;
+  height: 500px;
+  border: 5px solid black;
+}
+#bossimage{
+  width: 100%;
+  height: 100%;
+}
+
