@@ -49,7 +49,10 @@
   }
   
   .personpic-container { grid-area: personpic-container; }
-  
+  #personpic {
+    width: 300px;
+    height: 500px;
+  }
   .weapon-container {  display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.2fr 1.8fr;
@@ -93,8 +96,48 @@
   }
   
   .hpbar-container { grid-area: hpbar-container; }
-  
+  .progress {
+    margin: 10px;
+    width: 500px;
+    position: relative;
+  }
+  #current-progress{
+    display: inline-block;
+    z-index: 100;
+    position: absolute;
+  }
+  #dynamic{
+    background-color: red;
+  }
   .bossname-container { grid-area: bossname-container; }
   
   .bossimage-container { grid-area: bossimage-container; }
+
+  #damage-splat{ /*reference http://jsfiddle.net/Lcrqgjox/4/*/
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #FF0000;
+    margin-top: 20px;
+    
+    animation:signup-response 0.3s 1;
+    -webkit-animation:signup-response 0.3s 1;
+    animation-fill-mode: forwards;
+    
+    animation-delay:0.3s;
+    -webkit-animation-delay:0.3s; /* Safari and Chrome */
+    -webkit-animation-fill-mode: forwards;
+    
+} 
+
+@keyframes signup-response{
+    from {opacity :1;}
+    to {opacity :0;}
+}
+
+@-webkit-keyframes signup-response{
+    from {opacity :1;}
+    to {opacity :0;}
+}
   
