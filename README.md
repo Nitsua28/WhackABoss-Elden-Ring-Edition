@@ -1,2 +1,2 @@
-# whackABoss
-Elden Ring Api shinanigans
+# WhackABoss: Elden Ring Edition
+Elden Ring Api shinanigans. 
